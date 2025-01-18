@@ -19,7 +19,7 @@ export default function Register() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const resulted_data = Object.fromEntries(formData.entries());
-    const post_result = await fetch(process.env.REGISTER_POST_URL ,{
+    const post_result = await fetch('/api/users/registerUser' ,{
       method:'POST',
       headers:{
         'Content-Type':'application/json'

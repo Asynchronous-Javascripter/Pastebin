@@ -23,7 +23,7 @@ const POST = async (req) => {
     if(!valide_password){
      return Response.json({status:500, message:'Sorry, but email or password is wrong!'});
    } 
-    const auth_token = jwt.sign({name,email,age}, process.env.JWT_REGISTRATION_AUTH_TOKEN_SECRET);
+    const auth_token = jwt.sign({name,email,age}, process.env.JWT_SECRET);
     cookieStore.set('auth_token',auth_token,{priority:process.env.COOKIE_PRIORITY,maxAge:Number(process.env.COOKIE_AGE), httpOnly:true});
     return Response.json({status:200, message:'Login Successfull!'});
   }

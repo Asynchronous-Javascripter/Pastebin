@@ -23,7 +23,7 @@ const POST = async (req) => {
     console.log('Error, occured; User not created!');
     return Response.json({status:500, message:'Error, occured; User not created on the database!'});
   }else {
-    const auth_token = jwt.sign({name,email,age}, process.env.JWT_REGISTRATION_AUTH_TOKEN_SECRET);
+    const auth_token = jwt.sign({name,email,age}, process.env.JWT_SECRET);
     cookieStore.set('auth_token',auth_token,{priority:process.env.COOKIE_PRIORITY,maxAge:Number(process.env.COOKIE_AGE), httpOnly:true});
 
     return Response.json({status:200, message:'Registration successfull!'});
