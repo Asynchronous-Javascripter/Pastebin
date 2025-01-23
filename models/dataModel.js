@@ -1,6 +1,7 @@
 import mongoose from '../lib/database.js';
 const dataSchema = new mongoose.Schema({
-  content: String,
+  title: String,
+  description:String,
   author : {
     type: mongoose.Schema.Types.ObjectId,
     ref : 'User'

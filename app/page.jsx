@@ -24,7 +24,10 @@ const page = async () => {
   
   if(user_finding_result.status == 200){
 //    console.log(user_finding_result);
-    return <div className="font-black font-serif relative top-1 left-1">Hello, {user_finding_result.name}, your email is {user_finding_result.email} and your age is {user_finding_result.age}</div>;
+  /*   return  <div className="font-black font-serif relative top-1 left-1">Hello, {user_finding_result.name}, your email is {user_finding_result.email} and your age is {user_finding_result.age}</div>; */ 
+  return <Cards title={`It's ${user_finding_result.name}`} description={`Hello there, from ${user_finding_result.name} you, know my email is ${user_finding_result.email} and my age is ${user_finding_result.age}.`}/>
+  
+    
   }
   
 }
